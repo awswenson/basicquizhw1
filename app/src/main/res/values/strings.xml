@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Basic Quiz (HW1)</string>
+    <string name="btnStartQuiz">START QUIZ</string>
 </resources>
