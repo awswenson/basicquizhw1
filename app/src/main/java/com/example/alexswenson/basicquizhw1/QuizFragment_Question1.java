@@ -54,7 +54,7 @@ public class QuizFragment_Question1 extends Fragment {
         
         if (getArguments() != null) {
             correct = getArguments().getInt(ARG_CORRECT);
-            total = getArguments().getInt(ARG_TOTAL);
+            total = getArguments().getInt(ARG_TOTAL) + 1;
         }
     }
 
@@ -72,7 +72,7 @@ public class QuizFragment_Question1 extends Fragment {
         submitButton = (Button) view.findViewById(R.id.submit);
 
         // Set header text
-        headerTextView.setText("Question " + this.total + 1);
+        headerTextView.setText("Question " + total);
 
         return view;
     }
@@ -87,6 +87,11 @@ public class QuizFragment_Question1 extends Fragment {
             public void onClick(View v) {
                 // TODO
 
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.containerQuizFragment, QuizFragment_Question2.newInstance(correct, total))
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 

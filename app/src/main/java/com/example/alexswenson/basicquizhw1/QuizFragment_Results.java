@@ -22,7 +22,7 @@ public class QuizFragment_Results extends Fragment {
 
     private TextView headerTextView;
     private TextView resultsTextView;
-    private Button restartButton;
+    private Button retryButton;
     private Button quitButton;
 
     public QuizFragment_Results() {
@@ -64,7 +64,7 @@ public class QuizFragment_Results extends Fragment {
 
         headerTextView = (TextView) view.findViewById(R.id.header);
         resultsTextView = (TextView) view.findViewById(R.id.results);
-        restartButton = (Button) view.findViewById(R.id.restart);
+        retryButton = (Button) view.findViewById(R.id.retry);
         quitButton = (Button) view.findViewById(R.id.quit);
 
         // Set header text
@@ -77,12 +77,15 @@ public class QuizFragment_Results extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        restartButton.setOnClickListener(new View.OnClickListener() {
+        retryButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO
-
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.containerQuizFragment, QuizFragment_Question1.newInstance(0, 0))
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 
@@ -90,8 +93,7 @@ public class QuizFragment_Results extends Fragment {
 
             @Override
             public void onClick(View v) {
-                // TODO
-
+                getActivity().finish();
             }
         });
 
