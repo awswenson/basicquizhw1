@@ -7,7 +7,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top">
 
         <TextView
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="Answer 1"
                 android:id="@+id/answer1"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="left|center_horizontal"
                 android:checked="false" />
 
             <RadioButton
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:text="Answer 2"
                 android:id="@+id/answer2"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="left|center_horizontal"
                 android:checked="false" />
 
             <RadioButton
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="Answer 3"
                 android:id="@+id/answer3"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="left|center_horizontal"
                 android:checked="false" />
 
             <RadioButton
@@ -59,17 +59,24 @@
                 android:layout_height="wrap_content"
                 android:text="Answer 4"
                 android:id="@+id/answer4"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="left|center_horizontal"
                 android:checked="false" />
         </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btnSubmit"
             android:id="@+id/submit"
-            android:layout_gravity="bottom|center_horizontal" />
-
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
 </FrameLayout>

@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.widget.RadioButton;
 import android.widget.Button;
 
+import org.w3c.dom.Text;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -21,6 +23,7 @@ public class QuizFragment_Question2 extends Fragment {
     private int total; // The total number of questions encountered so far
 
     private TextView headerTextView;
+    private TextView questionTextView;
     private RadioButton answer1RadioButton;
     private RadioButton answer2RadioButton;
     private RadioButton answer3RadioButton;
@@ -66,6 +69,7 @@ public class QuizFragment_Question2 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_quiz_question2, container, false);
 
         headerTextView = (TextView) view.findViewById(R.id.header);
+        questionTextView = (TextView) view.findViewById(R.id.question);
         answer1RadioButton = (RadioButton) view.findViewById(R.id.answer1);
         answer2RadioButton = (RadioButton) view.findViewById(R.id.answer2);
         answer3RadioButton = (RadioButton) view.findViewById(R.id.answer3);
@@ -74,6 +78,13 @@ public class QuizFragment_Question2 extends Fragment {
 
         // Set header text
         headerTextView.setText("Question " + this.total);
+
+        // Set the question and answers
+        questionTextView.setText("Which one of the following companies created the iPhone?");
+        answer1RadioButton.setText("Apple");
+        answer2RadioButton.setText("Google");
+        answer3RadioButton.setText("Microsoft");
+        answer4RadioButton.setText("Intel");
 
         return view;
     }
@@ -86,7 +97,10 @@ public class QuizFragment_Question2 extends Fragment {
 
             @Override
             public void onClick(View v) {
-                // TODO
+
+                if (answer1RadioButton.isChecked()) {
+                    correct += 1;
+                }
 
                 getFragmentManager()
                         .beginTransaction()

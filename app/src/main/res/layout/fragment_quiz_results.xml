@@ -4,12 +4,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.alexswenson.basicquizhw1.QuizFragment_Results">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top">
 
         <TextView
@@ -28,25 +26,25 @@
             android:id="@+id/results"
             android:layout_gravity="center_horizontal" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:gravity="center">
+            android:text="@string/retry"
+            android:id="@+id/retry" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/retry"
-                android:id="@+id/retry" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/quit"
-                android:id="@+id/quit" />
-        </LinearLayout>
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quit"
+            android:id="@+id/quit" />
     </LinearLayout>
 </FrameLayout>
