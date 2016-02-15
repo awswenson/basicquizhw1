@@ -55,7 +55,7 @@ public class QuizFragment_Question1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         if (getArguments() != null) {
             correct = getArguments().getInt(ARG_CORRECT);
             total = getArguments().getInt(ARG_TOTAL) + 1;
@@ -123,7 +123,5 @@ public class QuizFragment_Question1 extends Fragment {
                         .commit();
             }
         });
-
     }
-
 }

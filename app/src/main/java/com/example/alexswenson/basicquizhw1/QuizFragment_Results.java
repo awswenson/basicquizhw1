@@ -68,7 +68,15 @@ public class QuizFragment_Results extends Fragment {
         quitButton = (Button) view.findViewById(R.id.quit);
 
         // Set header text
-        headerTextView.setText("Results");
+        headerTextView.setText("Your Results");
+
+        // Set the results text
+        if (correct == total) {
+            resultsTextView.setText("With " + total + " questions answered, you correctly answered all " + correct + "!  CONGRATS!");
+        }
+        else {
+            resultsTextView.setText("With " + total + " questions answered, you correctly answered " + correct + ".");
+        }
 
         return view;
     }

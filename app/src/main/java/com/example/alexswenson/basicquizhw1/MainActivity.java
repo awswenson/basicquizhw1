@@ -16,10 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState != null) {
-            return;
-        }
-
         btnStartQuiz = (Button)findViewById(R.id.btnStartQuiz);
         btnStartQuiz.setOnClickListener(new View.OnClickListener() {
 
