@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.Button;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +27,9 @@ public class QuizFragment_Question1 extends Fragment {
     private TextView questionTextView;
     private EditText answerEditText;
     private Button submitButton;
+
+    private String[] fruits = {"apple", "banana", "strawberry"};
+    private int selectedFruitIndex;
 
     public QuizFragment_Question1() {
         // Required empty public constructor
@@ -74,6 +78,28 @@ public class QuizFragment_Question1 extends Fragment {
         // Set header text
         headerTextView.setText("Question " + total);
 
+        // Set the question image and answer
+        Random randomGenerator = new Random();
+        selectedFruitIndex = randomGenerator.nextInt(fruits.length);
+
+        switch (selectedFruitIndex) {
+            case 0:
+                imageImageView.setImageResource(R.drawable.apple);
+                break;
+            case 1:
+                imageImageView.setImageResource(R.drawable.banana);
+                break;
+            case 2:
+                imageImageView.setImageResource(R.drawable.strawberry);
+                break;
+            default:
+                imageImageView.setImageResource(R.drawable.apple);
+                break;
+        }
+
+        // Set the question text
+        questionTextView.setText("What is the name of the fruit shown in the above picture?");
+
         return view;
     }
 
@@ -85,7 +111,10 @@ public class QuizFragment_Question1 extends Fragment {
 
             @Override
             public void onClick(View v) {
-                // TODO
+
+                if (fruits[selectedFruitIndex].equalsIgnoreCase(answerEditText.getText().toString())) {
+                    correct += 1;
+                }
 
                 getFragmentManager()
                         .beginTransaction()
@@ -96,4 +125,5 @@ public class QuizFragment_Question1 extends Fragment {
         });
 
     }
+
 }
