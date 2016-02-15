@@ -1,5 +1,6 @@
 package com.example.alexswenson.basicquizhw1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -30,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startQuiz(View view) {
-
-
-
+        Intent intent = new Intent(this, QuizActivity.class);
+        startActivity(intent);
     }
 }
